@@ -39,3 +39,6 @@ htmlcov/
 
 # 日志
 *.log
+
+# claudecode
+CLAUDE.md

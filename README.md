@@ -30,7 +30,8 @@
 
 ```
 IRRA-Agent/
-├── config.py                 # 配置文件（API 密钥等）
+├── config.example.py       # 配置文件模板（可提交）
+├── config.py               # 配置文件（已忽略，勿提交！）
 ├── requirements.txt          # Python 依赖
 ├── README.md                 # 项目文档
 ├── .gitignore                # Git 忽略文件
@@ -79,25 +80,18 @@ pip install -r requirements.txt
 
 ### 3. 配置 API 密钥
 
-编辑 `config.py` 文件，填入您的 API 密钥：
+> **安全提示**: 请勿将 `config.py` 提交到 git 仓库！`.gitignore` 已配置自动忽略此文件。
 
+复制配置文件模板：
+```bash
+cp config.example.py config.py
+```
+
+然后编辑 `config.py` 文件，填入您的真实 API 密钥：
 ```python
 # config.py
-
-# DeepSeek API Key
-DEEPSEEK_API_KEY = "your_deepseek_api_key"
-
-# OpenAI API Key (可选)
-OPENAI_API_KEY = "your_openai_api_key"
-
-# Tavily 搜索 API Key
-TAVILY_API_KEY = "your_tavily_api_key"
-
-# 配置参数
-DEFAULT_LLM_PROVIDER = "deepseek"  # 或 "openai"
-MAX_REFLECTIONS = 3                # 反思轮次
-SEARCH_RESULTS_PER_QUERY = 5       # 每查询搜索结果数
-OUTPUT_DIR = "reports"             # 报告输出目录
+DEEPSEEK_API_KEY = "sk-your-deepseek-api-key-here"  # 替换为真实密钥
+TAVILY_API_KEY = "tvly-your-tavily-api-key-here"    # 替换为真实密钥
 ```
 
 ### 4. 运行示例
